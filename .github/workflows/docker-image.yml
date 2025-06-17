@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/task-manager-app:latest
 
       - name: Push the image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/task-manager-app:latest
