@@ -23,7 +23,7 @@ const mongoUrl = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongoUrl, {
-  useNewUrlParser: true,
+  useNewUrlParser: true,   //useMongoClient:
   useUnifiedTopology: true,
 })
   .then(() => console.log("Mongodb connected..."))
@@ -47,3 +47,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, '0.0.0.0', () => {
   console.log(`Backend is running on port ${port}`);
 });
+
+//node app.js

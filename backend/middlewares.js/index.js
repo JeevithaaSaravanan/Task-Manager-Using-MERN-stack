@@ -21,7 +21,7 @@ exports.verifyAccessToken = async (req, res, next) => {
       return res.status(401).json({ status: false, msg: "User not found" });
     }
 
-    req.user = user;
+    req.user = user; //jwt decode db details,store in request object
     next();
   }
   catch (err) {
