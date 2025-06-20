@@ -21,16 +21,16 @@ const mongoUrl = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongoUrl, {
-  useNewUrlParser: true,
+  useNewUrlParser: true,   //useMongoClient:
   useUnifiedTopology: true,
 })
   .then(() => console.log("Mongodb connected..."))
   .catch(err => console.error("Mongodb connection error:", err));
 
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/tasks", taskRoutes);
-app.use("/api/profile", profileRoutes);
+app.use("/api/auth", authRoutes); //login,sign up
+app.use("/api/tasks", taskRoutes); // task functionality
+app.use("/api/profile", profileRoutes); //user profile
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
@@ -43,3 +43,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Backend is running on port ${port}`);
 });
+
+//node app.js
