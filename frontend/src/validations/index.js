@@ -36,7 +36,7 @@ export const validate = (group, name, value) => {
         return null;
       }
       case "password": {
-        if (!value) return "This field is required";
+        if (!value|| !value.trim()) return "This field is required";
         return null;
       }
       default: return null;
@@ -45,7 +45,7 @@ export const validate = (group, name, value) => {
   else if (group === "task") {
     switch (name) {
       case "description": {
-        if (!value) return "This field is required";
+        if (!value||!value.trim()) return "This field is required";
         if (value.length > 100) return "Max. limit is 100 characters.";
         return null;
       }
